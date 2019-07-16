@@ -14,8 +14,7 @@ class Combatants extends Component {
     const dataArray = Object.keys(this.props.data)
     const battler = dataArray.filter(player => (
         this.props.data[player].name.toLowerCase() !== 'limit break'
-	)).slice(0, maxRows)    let rows = []
-    let combatant
+    let rows = []    let combatant
     let isSelf
 
     for (const ref in battler) {
@@ -24,7 +23,7 @@ class Combatants extends Component {
       // console.log(combatant)
 
       // We'll change the global 'YOU' name in case it's, well, you
-      // In case you changed your name in ACT and in the overlay config
+      // In case you changedw your name in ACT and in the overlay config
       isSelf =
         combatant.name.toUpperCase() === 'YOU' ||
         this.props.config.characterName === combatant.name
