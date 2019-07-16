@@ -14,7 +14,9 @@ class Combatants extends Component {
     const dataArray = Object.keys(this.props.data)
     const battler = dataArray.filter(player => (
         this.props.data[player].name.toLowerCase() !== 'limit break'
-	)).slice(0, maxRows)
+		&& (this.props.data[player].Job === '' || !this.props.data[player].Job) //doesn't have a job, pet merging should be ON in ACT and is now a default option for that reason
+		&& (this.props.data[player].ENCDPS === 0 && this.props.data[player].ENCHPS === 0) //irrelevant npcs (i.e. estinien) like to show up for whatever reason
+	)).slice(-maxRows)
     let rows = []
     let combatant
     let isSelf
