@@ -14,8 +14,7 @@ class Combatants extends Component {
     const dataArray = Object.keys(this.props.data)
     const battler = dataArray.filter(player => (
         this.props.data[player].name.toLowerCase() !== 'limit break'
-    let rows = []    let combatant
-    let isSelf
+    let combatant    let isSelf
 
     for (const ref in battler) {
       combatant = this.props.data[battler[ref]]
