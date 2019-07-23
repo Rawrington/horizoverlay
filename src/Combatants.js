@@ -14,15 +14,19 @@ class Combatants extends Component {
     const dataArray = Object.keys(this.props.data)
     const battler = dataArray.filter(player => (
         this.props.data[player].name.toLowerCase() !== 'limit break'
-    let combatant    let isSelf
-
+		&& (!this.props.config.showJobless && this.props.data[player].Job && this.props.data[player].Job !== '') //doesn't have a job, filter it out.
+		&& (this.props.data[player].ENCDPS > 0 || this.props.data[player].ENCHPS > 0) //irrelevant npcs (i.e. estinien) like to show up for whatever reason
+	)).slice(-maxRows)
+    let rows = []
+    let combatant
+    let isSelf
     for (const ref in battler) {
       combatant = this.props.data[battler[ref]]
 
       // console.log(combatant)
 
       // We'll change the global 'YOU' name in case it's, well, you
-      // In case you changedw your name in ACT and in the overlay config
+      // In case you changed your name in ACT and in the overlay config
       isSelf =
         combatant.name.toUpperCase() === 'YOU' ||
         this.props.config.characterName === combatant.name
