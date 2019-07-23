@@ -23,12 +23,8 @@ const locale = {
       toggleOption9: 'Discord',
       toggleOption10: 'Language',
       toggleOption11: 'Max Hit',
-<<<<<<< HEAD
-      toggleOption12: 'Show "jobless" Combatants',      maxCombatantsTitle: 'Max Combatants',
-=======
-	  toggleOption12: 'Show "jobless" Combatats',
+	  toggleOption12: 'Show "jobless" Combatants',
       maxCombatantsTitle: 'Max Combatants',
->>>>>>> 21125157238e5765e3c71521b878e31b7ccce31c
       zoomTitle: 'Zoom Scale',
       zoomOption1: '80%',
       zoomOption2: '90%',
@@ -82,12 +78,8 @@ const locale = {
       toggleOption9: 'Discord',
       toggleOption10: 'Língua',
       toggleOption11: 'Max Hit',
-<<<<<<< HEAD
-      toggleOption12: 'Show "jobless" Combatants',      maxCombatantsTitle: 'Máx. Personagens',
-=======
-	  toggleOption12: 'Show "jobless" Combatats',
+      toggleOption12: 'Show "jobless" Combatants',
       maxCombatantsTitle: 'Máx. Personagens',
->>>>>>> 21125157238e5765e3c71521b878e31b7ccce31c
       zoomTitle: 'Escala de Zoom',
       zoomOption1: '80%',
       zoomOption2: '90%',
@@ -141,12 +133,8 @@ const locale = {
       toggleOption9: 'Discord',
       toggleOption10: '模版语言',
       toggleOption11: '最强伤害',
-<<<<<<< HEAD
-      toggleOption12: 'Show "jobless" Combatants',      maxCombatantsTitle: '最强战员',
-=======
-	  toggleOption12: 'Show "jobless" Combatats',
-      maxCombatantsTitle: '最强战员',
->>>>>>> 21125157238e5765e3c71521b878e31b7ccce31c
+      toggleOption12: 'Show "jobless" Combatants',
+	  maxCombatantsTitle: '最强战员',
       zoomTitle: '缩放尺寸',
       zoomOption1: '80%',
       zoomOption2: '90%',
@@ -200,12 +188,8 @@ const locale = {
       toggleOption9: 'Discord',
       toggleOption10: '模版語言',
       toggleOption11: '最強傷害',
-<<<<<<< HEAD
-      toggleOption12: 'Show "jobless" Combatants',      maxCombatantsTitle: '最強戰員',
-=======
-	  toggleOption12: 'Show "jobless" Combatats',
+	  toggleOption12: 'Show "jobless" Combatants',
       maxCombatantsTitle: '最強戰員',
->>>>>>> 21125157238e5765e3c71521b878e31b7ccce31c
       zoomTitle: '縮放尺寸',
       zoomOption1: '80%',
       zoomOption2: '90%',
