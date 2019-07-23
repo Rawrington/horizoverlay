@@ -20,14 +20,13 @@ class OverlayRaw extends React.Component {
       return false
 
     const maxRows = this.props.config.maxCombatants //not sure why let was being used here
-    const dataArray = Object.keys(this.props.Combatant) //we aren't manipulating this value so const is fine
+    const dataArray = this.props.isWebSocket ? Object.keys(this.props.Combatant).reverse() : Object.keys(this.props.Combatant) //const is fine, actws flips order for some reason I don't know why, this is my 'fix'
     let discordData = []
 	let currentRow = 0
 
-    //NOTE: We are avoiding the IN keyword cause it has some wierd behaviours, I'm too lazy to change Combatants.js right now but this is a good place to change it
-    //NOTE2: instead of wasting time slicing the array up we just break the loop when we need to, it avoids the problem of filtering out the lb only to want to handle it later
+    //NOTE: instead of wasting time slicing the array up we just break the loop when we need to, it avoids the problem of filtering out the lb only to want to handle it later
     for (const battler of dataArray) {
-      const combatant = this.props.Combatant[dataArray[ref]] //scope means we can just use const here
+      const combatant = this.props.Combatant[battler] //scope means we can just use const here
 
       // Send limit break data separated
       if (combatant.name.toLowerCase() === 'limit break') {
@@ -37,7 +36,7 @@ class OverlayRaw extends React.Component {
             10
           )
         )
-        continue //break will just break the loop entirely.. that is almost certainly not what is meant to happen here with the discord webhook
+        continue //break will just break the loop entirely.. if someone is deaing less damage than LB (yikes) they wouldn't end up included
       }
 	  
       if(currentRow >= maxRows) continue //sadly because of the above statement we have to loop through the full data set if we want to be sure
@@ -79,6 +78,7 @@ class OverlayRaw extends React.Component {
         style={{ zoom: props.config.zoom }}
       >
         <Combatants
+          isWebSocket={props.isWebSocket}
           data={props.Combatant}
           encounterDamage={props.Encounter.damage}
           config={props.config}
