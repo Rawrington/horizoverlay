@@ -33,8 +33,8 @@ class Combatants extends Component {
 
       // We need to reasign it here since it will call a reference
       const rank = currentRow
-	  
-	  currentRow = currentRow + 1
+ 
+      currentRow = currentRow + 1
 
       // don't need to render this component if this is a limit break
       // if (!combatant.name.toLowerCase() === 'limit break')
